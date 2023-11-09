@@ -1,0 +1,10 @@
+--Developer Notes--
+
+> Do Not work in the same file to avoid merge conflicts.
+
+>Always start work in a new branch
+
+> Always pull before starting your work
+
+>Frequently commit your work to the branch and merge it to avoid bigger conflicts 
+
