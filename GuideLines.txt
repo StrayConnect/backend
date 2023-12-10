@@ -8,5 +8,5 @@
 
 > Frequently commit your work to the branch and merge it to avoid bigger conflicts 
 
-> Create pull request 
+> Create pull request  
 
