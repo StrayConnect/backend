@@ -44,12 +44,8 @@ class AnimalServiceImpl implements AnimalService{
         String street = animal.get("street");
         String cityName = animal.get("city");
         int docId = Integer.parseInt(animal.get("docId"));
-        String date = animal.get("lastCheckDate");
+
         
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        
-        LocalDate date1 = LocalDate.parse(date, formatter);
-        System.out.println("Parsed Date: " + date1);
         
 
         String healthDescription = animal.get("healthDescription");
@@ -77,7 +73,7 @@ class AnimalServiceImpl implements AnimalService{
                 if(breed.isPresent())
                 {
                     Breed b1 = breed.get();
-                    Animal newAnimal = new Animal(nickname,street,city,d1,date1,healthDescription,healthStatus,b1,c1);
+                    Animal newAnimal = new Animal(nickname,street,city,d1,healthDescription,healthStatus,b1,c1);
                     animalRepo.save(newAnimal);
                     return "animal saved successfully";
                 }else
@@ -151,7 +147,7 @@ class AnimalServiceImpl implements AnimalService{
                 if(breed.isPresent())
                 {
                     Breed b1 = breed.get();
-                    Animal newAnimal = new Animal(animalId,nickname,street,city,d1,date1,healthDescription,healthStatus,b1,c1);
+                    Animal newAnimal = new Animal(animalId,nickname,street,city,d1,healthDescription,healthStatus,b1,c1);
                     animalRepo.save(newAnimal);
                     return "animal updated successfully";
                 }else
