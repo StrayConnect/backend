@@ -26,27 +26,27 @@ public class Animal {
     @ManyToOne
     private CareCenter center;
     
-    public Animal( int animalId, String nickname, String street, City cityId, Doctor docId, LocalDate lastCheckDate,
+    public Animal( int animalId, String nickname, String street, City cityId, Doctor docId,
             String healthDescription, String healthStatus, Breed breedId, CareCenter center) {
         this.animalId = animalId;
         this.nickname = nickname;
         this.street = street;
         this.cityId = cityId;
         this.docId = docId;
-        this.lastCheckDate = lastCheckDate;
+        this.lastCheckDate = LocalDate.now();
         this.healthDescription = healthDescription;
         this.healthStatus = healthStatus;
         this.breedId = breedId;
         this.center = center;
     }
 
-    public Animal( String nickname, String street, City cityId, Doctor docId, LocalDate lastCheckDate,
+    public Animal( String nickname, String street, City cityId, Doctor docId,
             String healthDescription, String healthStatus, Breed breedId, CareCenter center) {
         this.nickname = nickname;
         this.street = street;
         this.cityId = cityId;
         this.docId = docId;
-        this.lastCheckDate = lastCheckDate;
+        this.lastCheckDate = LocalDate.now();
         this.healthDescription = healthDescription;
         this.healthStatus = healthStatus;
         this.breedId = breedId;
@@ -94,7 +94,7 @@ public class Animal {
         return lastCheckDate;
     }
     public void setLastCheckDate(LocalDate lastCheckDate) {
-        this.lastCheckDate = lastCheckDate;
+        this.lastCheckDate = LocalDate.now();
     }
     public String getHealthDescription() {
         return healthDescription;
