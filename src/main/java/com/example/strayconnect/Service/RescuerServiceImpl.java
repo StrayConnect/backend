@@ -36,6 +36,7 @@ public class RescuerServiceImpl implements RescuerService {
         Long phone = Long.parseLong(rescuer.get("phone"));
         String street = rescuer.get("street");
         String cityName = rescuer.get("city");
+        String password = rescuer.get("password");
         City city = cityRepo.findByCity(cityName);
         if (city == null) {
             System.out.println("city is not in database hence adding to database");
@@ -48,7 +49,7 @@ public class RescuerServiceImpl implements RescuerService {
         if (center.isPresent()) {
             System.out.println("inside present");
             CareCenter c1 = center.get();
-            Rescuer newRescuer = new Rescuer(email, fname, lname, phone, street, city, c1);
+            Rescuer newRescuer = new Rescuer(email, fname, lname, phone, street, city, c1, password);
             rescuerRepo.save(newRescuer);
             return "rescuer added successfully";
         } else {
