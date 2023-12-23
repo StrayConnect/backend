@@ -14,6 +14,7 @@ public class Rescuer {
     private String email;
     private String fname;
     private String lname;
+    private String password;
     private long phone;
     private String street;
     @ManyToOne
@@ -40,7 +41,7 @@ public class Rescuer {
         this.center = center;
     }
     public Rescuer( String email, String fname, String lname, long phone, String street, City city,
-            CareCenter center) {
+    CareCenter center, String password) {
         this.email = email;
         this.fname = fname;
         this.lname = lname;
@@ -48,6 +49,7 @@ public class Rescuer {
         this.street = street;
         this.city = city;
         this.center = center;
+        this.password = password;
     }
     public int getRescId() {
         return rescId;

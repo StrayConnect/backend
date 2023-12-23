@@ -36,6 +36,7 @@ public class DoctorServiceImpl implements DoctorService {
         Long phone = Long.parseLong(doctor.get("phone"));
         String street = doctor.get("street");
         String cityName = doctor.get("city");
+        String password = doctor.get("password");
         City city = cityRepo.findByCity(cityName);
         if (city == null) {
             System.out.println("city is not in database hence adding to database");
@@ -48,7 +49,7 @@ public class DoctorServiceImpl implements DoctorService {
         if (center.isPresent()) {
             System.out.println("inside present");
             CareCenter c1 = center.get();
-            Doctor newDoctor = new Doctor(email, fname, lname, phone, street, city, c1);
+            Doctor newDoctor = new Doctor(email, fname, lname, phone, street, city, c1, password);
             doctorRepo.save(newDoctor);
             return "doctor added successfully";
         } else {

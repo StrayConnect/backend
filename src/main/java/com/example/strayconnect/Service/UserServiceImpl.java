@@ -40,6 +40,7 @@ public class UserServiceImpl implements UserService {
         Long phone = Long.parseLong(user.get("phone"));
         String street = user.get("street");
         String cityName = user.get("city");
+        String password = user.get("password");
 
         // finding city by city name
         City city = cityRepo.findByCity(cityName);
@@ -54,7 +55,7 @@ public class UserServiceImpl implements UserService {
             city = c;
         }
 
-        User newUser = new User(email, fname, lname, phone, street, city);
+        User newUser = new User(email, fname, lname, phone, street, city, password);
         userRepo.save(newUser);
         return "user saved successfully";
 

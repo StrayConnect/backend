@@ -18,18 +18,20 @@ public class User {
     private String lname;
     private long phone;
     private String street;
+    private String password;
     @ManyToOne
     private City city;
 
     public User() {
     }
-    public User(String email, String fname, String lname, long phone, String street, City city) {
+    public User(String email, String fname, String lname, long phone, String street, City city, String password) {
         this.email = email;
         this.fname = fname;
         this.lname = lname;
         this.phone = phone;
         this.street = street;
         this.city = city;
+        this.password = password;
     }
     public User(int userId,String email, String fname, String lname, long phone, String street, City city) {
         this.userId = userId;
